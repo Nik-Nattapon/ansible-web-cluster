@@ -9,6 +9,7 @@ This project demonstrates **Infrastructure as Code (IaC)** by automating the pro
 
 ## 🏗️ System Architecture
 
+```mermaid
 graph TD
     Client([🌐 Client]) -->|HTTP Port 9090| LB[⚖️ Load Balancer - lb01]
     LB -->|Round Robin| W1[📄 Web Server - web01]
@@ -18,9 +19,7 @@ graph TD
     A -.->|SSH Port 2221| W1
     A -.->|SSH Port 2222| W2
 
-
 📂 Directory Structure
-Plaintext
 ansible-web-cluster/
 ├── docker-compose.yml     # Infrastructure setup (web01, web02, lb01)
 ├── inventory/
@@ -32,6 +31,7 @@ ansible-web-cluster/
 ├── templates/
 │   └── index.html.j2      # Dynamic Jinja2 web template
 └── ansible.cfg            # Ansible configurations
+
 🚀 Getting Started
 1. Prerequisites
 Docker & Docker Compose (with WSL2 integration enabled)
