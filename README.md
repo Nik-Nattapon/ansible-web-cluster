@@ -19,7 +19,7 @@ graph TD
     A -.->|SSH Port 2221| W1
     A -.->|SSH Port 2222| W2
 
-    📂 Directory Structure
+📂 Directory Structure
 Plaintext
 ansible-web-cluster/
 ├── docker-compose.yml     # Infrastructure setup (web01, web02, lb01)
