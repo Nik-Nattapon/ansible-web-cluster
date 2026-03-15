@@ -18,6 +18,7 @@ graph TD
     A{{🤖 Ansible Control Node}} -.->|SSH Port 2233| LB
     A -.->|SSH Port 2221| W1
     A -.->|SSH Port 2222| W2
+```mermaid
 
 📂 Directory Structure
 Plaintext
