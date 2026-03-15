@@ -1,0 +1,22 @@
+services:
+  web01:
+    build: .
+    container_name: web01
+    ports:
+      - "2221:22" # SSH
+      - "8081:80" # Web Port
+  web02:
+    build: .
+    container_name: web02
+    ports:
+      - "2222:22" # SSH
+      - "8082:80" # Web Port
+  lb01:
+    build: .
+    container_name: lb01
+    ports:
+      - "2225:22"   # เปลี่ยนจาก 2223 เป็น 2225 (หนีพอร์ตเดิม)
+      - "9000:80"   # เปลี่ยนจาก 80 เป็น 9000 (พอร์ต 80 มักถูกจองโดย Windows Service)
+    depends_on:
+      - web01
+      - web02

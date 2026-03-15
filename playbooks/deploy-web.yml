@@ -1,0 +1,22 @@
+---
+- name: Install and Setup Web Cluster
+  hosts: webservers
+  become: yes
+  tasks:
+    - name: Update apt and Install Nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy dynamic HTML template
+      template:
+        src: ../templates/index.html.j2
+        dest: /var/www/html/index.html
+        mode: '0644'
