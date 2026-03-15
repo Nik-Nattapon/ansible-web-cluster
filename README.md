@@ -40,19 +40,16 @@ Ansible installed on the control node (WSL/Ubuntu)
 
 2. Provision Infrastructure
 Spin up the target nodes (containers) in the background:
-
-Bash
 docker-compose up -d --build
+
 3. Deploy Configuration
 Run the master playbook to configure all servers automatically:
-
-Bash
 ansible-playbook -i inventory/hosts.ini playbooks/site.yml
+
 🧪 Testing the Cluster
 Access the Load Balancer from your browser or terminal:
-
-Bash
 curl http://localhost:9090
+
 Refresh the page multiple times to see the Load Balancer distribute traffic between web01 and web02 dynamically.
 
 Author: Natthapon | System Integration Engineer
